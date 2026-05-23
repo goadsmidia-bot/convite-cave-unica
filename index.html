@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0E0A07" />
+<title>CAVE ÚNICA — Inauguração Exclusiva</title>
+<meta name="description" content="Inauguração exclusiva da CAVE ÚNICA. Uma experiência para ser vivida no tempo certo. 05 de Junho · 18h30 · Alphaville Flamboyant · Goiânia." />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CAVE ÚNICA — Inauguração Exclusiva" />
+<meta property="og:description" content="05 de Junho · 18h30 · Alphaville Flamboyant · Goiânia." />
+<meta property="og:image" content="./assets/cave-unica-logo.png" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+/* ================================================================
+   CAVE ÚNICA — Convite Online · Mobile-First Premium
+   ================================================================ */
+:root {
+  --bg-deepest:   #0E0A07;
+  --bg-base:      #14100C;
+  --bg-card:      #1A130E;
+  --ink-primary:  #EFE6D7;
+  --ink-soft:     #C9BBA7;
+  --ink-muted:    #8E7E69;
+  --copper:       #C69973;
+  --copper-light: #E0B886;
+  --copper-dark:  #8A6443;
+  --copper-deep:  #5E4329;
+  --line:         rgba(198,153,115,.22);
+  --line-strong:  rgba(198,153,115,.5);
+
+  --f-display: 'Italiana', 'Cormorant Garamond', serif;
+  --f-serif:   'Cormorant Garamond', 'Times New Roman', serif;
+  --f-sans:    'Inter', system-ui, -apple-system, sans-serif;
+
+  --pad: clamp(24px, 7vw, 40px);
+  --ease: cubic-bezier(.2,.6,.2,1);
+
+  /* safe areas for iPhone notch / home bar */
+  --sat: env(safe-area-inset-top, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+}
+
+*, *::before, *::after { box-sizing: border-box; -webkit-tap-highlight-color: transparent }
+html, body { margin: 0; padding: 0 }
+
+html {
+  background: var(--bg-deepest);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  /* prevent iOS bounce from showing white */
+  background-color: var(--bg-deepest);
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: var(--ink-primary);
+  font-family: var(--f-serif);
+  font-weight: 300;
+  line-height: 1.65;
+  background: var(--bg-deepest);
+  overflow-x: hidden;
+}
+
+/* ── Card wrapper ─────────────────────────────────────────────── */
+.invite {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  background: linear-gradient(175deg, #1C140F 0%, #0F0A07 100%);
+  overflow: hidden;
+  /* subtle outer glow on desktop */
+  box-shadow: 0 0 80px rgba(0,0,0,.6);
+}
+
+/* ambient warm gradient — no background-attachment:fixed (iOS jank) */
+.invite::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 120% 50% at 50% 0%, rgba(198,153,115,.07), transparent 55%),
+    radial-gradient(ellipse 100% 40% at 50% 100%, rgba(0,0,0,.45), transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Inner decorative frame ───────────────────────────────────── */
+.frame-border {
+  position: absolute;
+  inset: 13px;
+  border: 1px solid var(--line);
+  pointer-events: none;
+  z-index: 8;
+}
+
+/* corner ticks */
+.frame-corners { position: absolute; inset: 13px; z-index: 9; pointer-events: none }
+.frame-corners i {
+  position: absolute; width: 16px; height: 16px;
+}
+.frame-corners i::before,
+.frame-corners i::after {
+  content: ""; position: absolute; background: var(--copper); opacity: .75;
+}
+.frame-corners i::before { width: 16px; height: 1px }
+.frame-corners i::after  { width: 1px; height: 16px }
+.frame-corners i.tl { top: -1px; left: -1px }
+.frame-corners i.tr { top: -1px; right: -1px }
+.frame-corners i.bl { bottom: -1px; left: -1px }
+.frame-corners i.br { bottom: -1px; right: -1px }
+.frame-corners i.tr::after  { right: 0 }
+.frame-corners i.bl::before { bottom: 0 }
+.frame-corners i.br::before { bottom: 0; right: 0 }
+.frame-corners i.br::after  { right: 0; bottom: 0 }
+
+/* diamond accents */
+.diamonds { position: absolute; inset: 0; z-index: 9; pointer-events: none }
+.diamonds i {
+  position: absolute; width: 7px; height: 7px;
+  background: var(--copper); transform: rotate(45deg); opacity: .8;
+}
+.diamonds i.tl { top: 9px;  left: 9px }
+.diamonds i.tr { top: 9px;  right: 9px }
+.diamonds i.bl { bottom: 9px; left: 9px }
+.diamonds i.br { bottom: 9px; right: 9px }
+
+/* ── All sections ─────────────────────────────────────────────── */
+section {
+  position: relative;
+  z-index: 3;
+  padding: 64px var(--pad);
+  text-align: center;
+}
+
+/* ── HERO ─────────────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: calc(var(--sat) + 72px);
+  padding-bottom: calc(var(--sab) + 80px);
+  gap: 0;
+}
+
+.hero-logo {
+  width: min(72%, 280px);
+  margin: 0 auto 28px;
+  opacity: 0;
+  animation: rise 2.2s var(--ease) .1s forwards;
+}
+.hero-logo img {
+  width: 100%; height: auto; display: block;
+  filter: drop-shadow(0 4px 24px rgba(0,0,0,.7));
+}
+
+.eyebrow {
+  font-family: var(--f-sans);
+  font-size: 10px;
+  letter-spacing: .44em;
+  text-transform: uppercase;
+  color: var(--copper);
+  font-weight: 500;
+  margin: 0 0 16px;
+  padding-right: .44em; /* optical compensation for letter-spacing */
+}
+
+.hero-title {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: clamp(26px, 8vw, 34px);
+  letter-spacing: .18em;
+  padding-right: .18em;
+  color: var(--ink-primary);
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.sensorial {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(15px, 4.5vw, 18px);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 280px;
+  margin: 20px auto 0;
+}
+
+.meta {
+  font-family: var(--f-display);
+  font-size: clamp(17px, 5vw, 21px);
+  letter-spacing: .1em;
+  padding-right: .1em;
+  color: var(--ink-primary);
+  margin-top: 32px;
+  line-height: 1.5;
+}
+.meta .dot { color: var(--copper); margin: 0 .3em }
+.meta .place {
+  display: block;
+  font-family: var(--f-sans);
+  font-size: 10px;
+  letter-spacing: .4em;
+  padding-right: .4em;
+  color: var(--copper);
+  margin-top: 12px;
+  text-transform: uppercase;
+}
+
+/* hero CTA — large touch target */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 18px 36px;
+  min-height: 54px;
+  background: transparent;
+  color: var(--copper-light);
+  border: 1px solid var(--copper);
+  border-radius: 2px;
+  font-family: var(--f-sans);
+  font-size: 10px;
+  letter-spacing: .4em;
+  padding-right: calc(36px + .4em);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background .6s var(--ease), color .6s var(--ease), border-color .6s var(--ease);
+}
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(198,153,115,.15);
+  pointer-events: none;
+  transition: inset .5s var(--ease);
+}
+.cta:active,
+.cta:hover {
+  background: rgba(198,153,115,.08);
+  color: var(--ink-primary);
+  border-color: var(--copper-light);
+}
+.cta:active::before { inset: 6px }
+
+/* scroll hint */
+.scroll-hint {
+  margin-top: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  animation: fadeIn 1.8s var(--ease) 1.6s forwards;
+}
+.scroll-hint span {
+  font-family: var(--f-sans);
+  font-size: 8.5px;
+  letter-spacing: .5em;
+  padding-right: .5em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+}
+.scroll-hint-line {
+  width: 1px; height: 32px;
+  background: linear-gradient(180deg, var(--copper) 0%, transparent 100%);
+  animation: pulseDown 2.2s ease-in-out infinite;
+}
+
+/* ── Ornament: line + diamond ─────────────────────────────────── */
+.orn {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  margin: 20px auto;
+  color: var(--copper);
+}
+.orn::before, .orn::after {
+  content: "";
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--copper), transparent);
+}
+.orn.sm::before, .orn.sm::after { width: 44px }
+.orn.md::before, .orn.md::after { width: 72px }
+.orn .d { width: 6px; height: 6px; background: var(--copper); transform: rotate(45deg); flex-shrink: 0 }
+
+/* ── Section titles ───────────────────────────────────────────── */
+.section-eyebrow {
+  font-family: var(--f-sans);
+  font-size: 9.5px;
+  letter-spacing: .44em;
+  padding-right: .44em;
+  text-transform: uppercase;
+  color: var(--copper);
+  font-weight: 500;
+  margin: 0 0 14px;
+}
+h2.section-title {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: clamp(26px, 7.5vw, 32px);
+  letter-spacing: .04em;
+  padding-right: .04em;
+  color: var(--ink-primary);
+  margin: 0 0 24px;
+  line-height: 1.2;
+}
+
+/* ── INVITATION ───────────────────────────────────────────────── */
+.invitation {
+  padding-top: 60px;
+  padding-bottom: 52px;
+}
+.invitation p {
+  font-family: var(--f-serif);
+  font-weight: 300;
+  font-size: clamp(15.5px, 4.5vw, 17px);
+  line-height: 1.8;
+  color: var(--ink-soft);
+  max-width: 320px;
+  margin: 0 auto 0;
+}
+.invitation p + p { margin-top: 20px }
+.invitation em { color: var(--copper-light); font-style: italic }
+
+/* ── EXPERIENCE ───────────────────────────────────────────────── */
+.experience { padding-bottom: 52px }
+
+.exp-items {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 36px;
+}
+.exp-item { text-align: center }
+.exp-item .ico {
+  width: 44px; height: 44px;
+  margin: 0 auto 14px;
+  display: block;
+  color: var(--copper);
+}
+.exp-item h3 {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: .3em;
+  padding-right: .3em;
+  text-transform: uppercase;
+  color: var(--ink-primary);
+  margin: 0 0 6px;
+}
+.exp-item h3::after {
+  content: "";
+  display: block;
+  width: 22px; height: 1px;
+  background: var(--copper);
+  margin: 10px auto 12px;
+  opacity: .65;
+}
+.exp-item p {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-size: clamp(14.5px, 4vw, 16px);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+/* ── SECTION DIVIDER ──────────────────────────────────────────── */
+.divider {
+  position: relative;
+  height: 1px;
+  margin: 0 14%;
+  background: linear-gradient(90deg, transparent, var(--copper) 50%, transparent);
+  opacity: .3;
+}
+
+/* ── MAESTRO ──────────────────────────────────────────────────── */
+.maestro {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+.maestro-art {
+  width: 130px; height: 130px;
+  margin: 24px auto 22px;
+  color: var(--copper);
+}
+.maestro-art svg { width: 100%; height: 100%; display: block }
+
+.maestro-name {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: clamp(28px, 8vw, 38px);
+  letter-spacing: .04em;
+  color: var(--ink-primary);
+  margin: 10px 0 0;
+  line-height: 1.15;
+}
+.maestro-name .first {
+  display: block;
+  font-size: 11px;
+  letter-spacing: .48em;
+  padding-right: .48em;
+  color: var(--copper);
+  text-transform: uppercase;
+  font-family: var(--f-sans);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.maestro-quote {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-size: clamp(14.5px, 4.2vw, 16px);
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 290px;
+  margin: 22px auto 0;
+}
+
+/* ── INFO ─────────────────────────────────────────────────────── */
+.info { padding-bottom: 52px }
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 28px auto 0;
+  max-width: 100%;
+  text-align: left;
+}
+.info-list li {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.info-list li:last-child { border-bottom: none }
+.info-list label {
+  font-family: var(--f-sans);
+  font-size: 9.5px;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--copper);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.info-list span {
+  font-family: var(--f-display);
+  font-size: clamp(15px, 4.5vw, 18px);
+  letter-spacing: .03em;
+  color: var(--ink-primary);
+  text-align: right;
+  line-height: 1.4;
+}
+
+/* ── RSVP ─────────────────────────────────────────────────────── */
+.rsvp {
+  padding-top: 60px;
+  padding-bottom: calc(var(--sab) + 100px);
+}
+.rsvp .lead {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-size: clamp(15px, 4.5vw, 17px);
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 300px;
+  margin: 16px auto 36px;
+}
+
+/* Primary WhatsApp button */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  width: 100%;
+  max-width: 320px;
+  padding: 20px 28px;
+  min-height: 60px;
+  background: linear-gradient(160deg, var(--copper-dark) 0%, var(--copper-deep) 100%);
+  color: var(--ink-primary);
+  border: 1px solid rgba(224,184,134,.45);
+  border-radius: 2px;
+  font-family: var(--f-sans);
+  font-size: 10.5px;
+  letter-spacing: .35em;
+  padding-right: calc(28px + .35em);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background .6s var(--ease), border-color .5s var(--ease), box-shadow .5s var(--ease);
+  box-shadow: 0 8px 32px -8px rgba(0,0,0,.5);
+}
+.btn-whatsapp svg { width: 18px; height: 18px; flex-shrink: 0 }
+.btn-whatsapp:hover,
+.btn-whatsapp:active {
+  background: linear-gradient(160deg, var(--copper) 0%, var(--copper-dark) 100%);
+  border-color: var(--copper-light);
+  box-shadow: 0 12px 40px -8px rgba(198,153,115,.25);
+}
+
+/* Form toggle */
+.form-toggle {
+  display: inline-block;
+  margin-top: 26px;
+  background: none; border: none;
+  color: var(--ink-muted);
+  font-family: var(--f-sans);
+  font-size: 10px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 10px 6px;
+  min-height: 44px;
+  touch-action: manipulation;
+  position: relative;
+  transition: color .5s var(--ease);
+}
+.form-toggle::after {
+  content: "";
+  display: block;
+  width: 18px; height: 1px;
+  background: var(--copper);
+  margin: 5px auto 0;
+  transition: width .5s var(--ease);
+}
+.form-toggle:hover,
+.form-toggle:active { color: var(--copper-light) }
+.form-toggle:hover::after { width: 36px }
+
+/* Collapsible form */
+.rsvp-form {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .7s var(--ease), opacity .7s var(--ease);
+  opacity: 0;
+  max-width: 340px;
+  margin: 0 auto;
+  text-align: left;
+}
+.rsvp-form.open {
+  max-height: 520px;
+  opacity: 1;
+  margin-top: 20px;
+}
+.field { margin-bottom: 20px }
+.field label {
+  display: block;
+  font-family: var(--f-sans);
+  font-size: 9px;
+  letter-spacing: .38em;
+  text-transform: uppercase;
+  color: var(--copper);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.field input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line-strong);
+  padding: 12px 0;
+  color: var(--ink-primary);
+  font-family: var(--f-serif);
+  font-size: 17px; /* min 16px prevents iOS auto-zoom */
+  outline: none;
+  transition: border-color .5s var(--ease);
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+.field input:focus { border-color: var(--copper-light) }
+.field input::placeholder { color: var(--ink-muted); font-style: italic }
+
+.btn-submit {
+  width: 100%;
+  margin-top: 12px;
+  padding: 16px 0;
+  min-height: 52px;
+  background: transparent;
+  color: var(--copper-light);
+  border: 1px solid var(--copper);
+  border-radius: 2px;
+  font-family: var(--f-sans);
+  font-size: 10px;
+  letter-spacing: .4em;
+  text-transform: uppercase;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background .5s var(--ease), color .5s var(--ease);
+  font-weight: 500;
+}
+.btn-submit:hover,
+.btn-submit:active {
+  background: rgba(198,153,115,.08);
+  color: var(--ink-primary);
+}
+
+.rsvp-thanks {
+  display: none;
+  margin-top: 24px;
+  font-family: var(--f-serif);
+  font-style: italic;
+  color: var(--copper-light);
+  font-size: clamp(15px, 4.5vw, 17px);
+  line-height: 1.6;
+}
+.rsvp-thanks.show { display: block; animation: fadeIn 1s var(--ease) }
+
+/* ── FOOTER ───────────────────────────────────────────────────── */
+.footer {
+  padding: 48px var(--pad) calc(var(--sab) + 56px);
+  border-top: 1px solid var(--line);
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+.footer-brand {
+  font-family: var(--f-display);
+  font-size: 15px;
+  letter-spacing: .38em;
+  padding-right: .38em;
+  color: var(--ink-primary);
+  text-transform: uppercase;
+  margin: 0 0 16px;
+}
+.footer-tag {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  margin: 0 auto 20px;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  font-family: var(--f-sans);
+  font-size: 9.5px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--copper);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 12px 16px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  touch-action: manipulation;
+  transition: color .4s var(--ease);
+}
+.footer-links a:active,
+.footer-links a:hover { color: var(--copper-light) }
+
+/* ── Floating WhatsApp button (mobile sticky) ─────────────────── */
+.float-cta {
+  position: fixed;
+  bottom: calc(var(--sab) + 20px);
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  width: calc(100% - 48px);
+  max-width: 340px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 17px 24px;
+  min-height: 56px;
+  background: linear-gradient(160deg, #6B4B2E 0%, #3D2410 100%);
+  color: var(--ink-primary);
+  border: 1px solid rgba(198,153,115,.5);
+  border-radius: 3px;
+  font-family: var(--f-sans);
+  font-size: 10px;
+  letter-spacing: .36em;
+  padding-right: calc(24px + .36em);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  touch-action: manipulation;
+  box-shadow: 0 8px 40px rgba(0,0,0,.6), 0 0 0 1px rgba(198,153,115,.1);
+  transition: transform .5s var(--ease), opacity .5s var(--ease), background .4s var(--ease);
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+.float-cta.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.float-cta:active {
+  background: linear-gradient(160deg, var(--copper-dark) 0%, #4A2C18 100%);
+}
+.float-cta svg { width: 17px; height: 17px; flex-shrink: 0 }
+
+/* ── Reveal animations ────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1.4s var(--ease), transform 1.4s var(--ease);
+}
+.reveal.visible { opacity: 1; transform: translateY(0) }
+.reveal.d1 { transition-delay: .12s }
+.reveal.d2 { transition-delay: .24s }
+.reveal.d3 { transition-delay: .36s }
+.reveal.d4 { transition-delay: .48s }
+.reveal.d5 { transition-delay: .60s }
+
+/* ── Keyframes ────────────────────────────────────────────────── */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); filter: blur(3px) }
+  to   { opacity: 1; transform: translateY(0);    filter: blur(0) }
+}
+@keyframes fadeIn {
+  from { opacity: 0 } to { opacity: 1 }
+}
+@keyframes pulseDown {
+  0%, 100% { opacity: .2; transform: scaleY(.5); transform-origin: top }
+  50%       { opacity: 1;  transform: scaleY(1);  transform-origin: top }
+}
+
+/* ── Desktop adjustments ──────────────────────────────────────── */
+@media (min-width: 520px) {
+  body { padding: 32px 16px; background: #080503 }
+  .invite { margin: 32px auto; border-radius: 3px }
+  .float-cta { display: none } /* on desktop the section button is sufficient */
+  .rsvp { padding-bottom: 80px }
+  .footer { padding-bottom: 60px }
+  .exp-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .exp-item + .exp-item {
+    border-left: 1px solid var(--line);
+    padding-left: 20px;
+  }
+}
+
+/* ── Reduced motion ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating sticky CTA (mobile only, appears after scroll) -->
+<a class="float-cta" id="float-cta"
+   href="https://wa.me/5562982608102?text=Ol%C3%A1%2C%20quero%20confirmar%20minha%20presen%C3%A7a%20na%20inaugura%C3%A7%C3%A3o%20da%20CAVE%20%C3%9ANICA"
+   target="_blank" rel="noopener" aria-label="Confirmar presença pelo WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M16 3C9 3 3 9 3 16c0 2.6.8 5 2.2 7L3 29l6.1-2.1C11 27.9 13.4 29 16 29c7 0 13-6 13-13S23 3 16 3zm0 24c-2.2 0-4.2-.7-5.9-1.8l-.4-.2-3.5 1.2 1.2-3.4-.3-.4A10.8 10.8 0 1 1 16 27zm5.9-8.1c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.4-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.4-.6.1-.2.1-.4 0-.6-.1-.2-.7-1.7-1-2.4-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9 0 1.7 1.2 3.3 1.4 3.5.2.2 2.4 3.7 5.9 5.1.8.3 1.5.5 2 .7.8.2 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.4z"/>
+  </svg>
+  <span>Confirmar presença</span>
+</a>
+
+<main class="invite" id="invite">
+  <!-- decorative frame elements -->
+  <div class="frame-border" aria-hidden="true"></div>
+  <div class="frame-corners" aria-hidden="true">
+    <i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>
+  </div>
+  <div class="diamonds" aria-hidden="true">
+    <i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>
+  </div>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero">
+    <div class="hero-logo">
+      <img src="./assets/cave-unica-logo.png" alt="CAVE ÚNICA" />
+    </div>
+
+    <div class="orn sm reveal d1"><span class="d"></span></div>
+
+    <p class="eyebrow reveal d2">05 · 06 · 2026</p>
+
+    <h1 class="hero-title reveal d3">
+      Inauguração<br>Exclusiva
+    </h1>
+
+    <p class="sensorial reveal d4">
+      Uma experiência para ser<br>vivida no tempo certo.
+    </p>
+
+    <div class="meta reveal d5">
+      05 de Junho <span class="dot">·</span> 18h30
+      <span class="place">Alphaville Flamboyant · Goiânia</span>
+    </div>
+
+    <a class="cta reveal d5" href="#rsvp">
+      <span>Confirmar presença</span>
+    </a>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Descer</span>
+      <div class="scroll-hint-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONVITE ═══════════════ -->
+  <section class="invitation">
+    <div class="orn sm reveal"><span class="d"></span></div>
+    <p class="section-eyebrow reveal d1">O convite</p>
+    <h2 class="section-title reveal d2">Você está convidado.</h2>
+    <p class="reveal d3">
+      Para uma noite criada em torno do vinho, da música, da alta gastronomia
+      e da atmosfera única que marca o início da <em>CAVE ÚNICA</em>.
+    </p>
+    <p class="reveal d4">
+      Mais do que uma inauguração, uma experiência reservada para celebrar
+      o encontro entre curadoria, elegância e presença.
+    </p>
+    <div class="orn sm reveal d5" style="margin-top:44px"><span class="d"></span></div>
+  </section>
+
+  <!-- ═══════════════ EXPERIÊNCIA ═══════════════ -->
+  <div class="divider" aria-hidden="true"></div>
+
+  <section class="experience">
+    <p class="section-eyebrow reveal">A experiência</p>
+    <h2 class="section-title reveal d1">Três tempos,<br>uma só noite.</h2>
+
+    <div class="exp-items">
+
+      <div class="exp-item reveal d2">
+        <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+          <path d="M22 8h20l-2 18a8 8 0 0 1-16 0L22 8z"/>
+          <path d="M32 34v18"/>
+          <path d="M22 54h20"/>
+          <path d="M26 14h12" opacity=".5"/>
+        </svg>
+        <h3>Vinho</h3>
+        <p>Rótulos selecionados para conduzir a noite com presença e sofisticação.</p>
+      </div>
+
+      <div class="exp-item reveal d3">
+        <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+          <path d="M40 12c0 14-16 16-16 30a8 8 0 0 0 16 0c0-8-8-12-8-22"/>
+          <circle cx="32" cy="46" r="6" fill="currentColor" stroke="none" opacity=".6"/>
+          <path d="M38 46V20" opacity=".7"/>
+        </svg>
+        <h3>Música</h3>
+        <p>Uma atmosfera marcada pela sensibilidade da música ao vivo.</p>
+      </div>
+
+      <div class="exp-item reveal d4">
+        <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+          <path d="M22 8v22a4 4 0 0 0 4 4v22"/>
+          <path d="M18 8v14"/>
+          <path d="M26 8v14"/>
+          <path d="M42 8c-4 4-6 10-6 16s4 8 4 8v24"/>
+        </svg>
+        <h3>Gastronomia</h3>
+        <p>Sabores pensados para acompanhar cada momento da experiência.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ MAESTRO ═══════════════ -->
+  <div class="divider" aria-hidden="true"></div>
+
+  <section class="maestro">
+    <p class="section-eyebrow reveal">Participação especial</p>
+
+    <div class="maestro-art reveal d1" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="100" cy="100" r="92" opacity=".3"/>
+        <circle cx="100" cy="100" r="82" opacity=".14"/>
+        <circle cx="100" cy="62" r="14" stroke-width="1.6"/>
+        <path d="M82 80 L62 140" stroke-width="1.6"/>
+        <path d="M118 80 L138 140" stroke-width="1.6"/>
+        <path d="M88 80 L100 120" opacity=".45"/>
+        <path d="M112 80 L100 120" opacity=".45"/>
+        <path d="M118 80 L156 36" stroke-width="1.6"/>
+        <path d="M156 36 L174 22" stroke-width="1.6"/>
+        <circle cx="174" cy="22" r="2" fill="currentColor" stroke="none"/>
+        <path d="M82 80 L60 116" opacity=".55"/>
+        <circle cx="44" cy="56" r="3" fill="currentColor" stroke="none" opacity=".45"/>
+        <path d="M47 56 L52 38" opacity=".45"/>
+        <circle cx="160" cy="110" r="3" fill="currentColor" stroke="none" opacity=".35"/>
+        <path d="M163 110 L168 90" opacity=".35"/>
+      </svg>
+    </div>
+
+    <h2 class="maestro-name reveal d2">
+      <span class="first">Maestro</span>
+      Nilson Magalhães
+    </h2>
+
+    <p class="maestro-quote reveal d3">
+      Uma noite conduzida pela harmonia<br>entre vinho, música e experiência.
+    </p>
+
+    <div class="orn sm reveal d4" style="margin-top:32px"><span class="d"></span></div>
+  </section>
+
+  <!-- ═══════════════ INFORMAÇÕES ═══════════════ -->
+  <div class="divider" aria-hidden="true"></div>
+
+  <section class="info">
+    <p class="section-eyebrow reveal">Informações</p>
+    <h2 class="section-title reveal d1">Detalhes da noite</h2>
+
+    <ul class="info-list">
+      <li class="reveal d2">
+        <label>Data</label>
+        <span>05 de Junho</span>
+      </li>
+      <li class="reveal d3">
+        <label>Horário</label>
+        <span>18h30</span>
+      </li>
+      <li class="reveal d4">
+        <label>Local</label>
+        <span>Rua Piracanjuba, nº 62<br>Qd. C-5, Alphaville Flamboyant<br>Goiânia · GO</span>
+      </li>
+      <li class="reveal d5">
+        <label>Dress code</label>
+        <span>Elegante casual</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════ RSVP ═══════════════ -->
+  <div class="divider" aria-hidden="true"></div>
+
+  <section class="rsvp" id="rsvp">
+    <div class="orn md reveal"><span class="d"></span></div>
+    <p class="section-eyebrow reveal d1">RSVP</p>
+    <h2 class="section-title reveal d2">Confirme sua presença</h2>
+    <p class="lead reveal d3">
+      Por se tratar de uma experiência reservada,<br>a confirmação é indispensável.
+    </p>
+
+    <a class="btn-whatsapp reveal d4"
+       href="https://wa.me/5562982608102?text=Ol%C3%A1%2C%20quero%20confirmar%20minha%20presen%C3%A7a%20na%20inaugura%C3%A7%C3%A3o%20da%20CAVE%20%C3%9ANICA"
+       target="_blank" rel="noopener">
+      <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+        <path d="M16 3C9 3 3 9 3 16c0 2.6.8 5 2.2 7L3 29l6.1-2.1C11 27.9 13.4 29 16 29c7 0 13-6 13-13S23 3 16 3zm0 24c-2.2 0-4.2-.7-5.9-1.8l-.4-.2-3.5 1.2 1.2-3.4-.3-.4A10.8 10.8 0 1 1 16 27zm5.9-8.1c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.4-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.4-.6.1-.2.1-.4 0-.6-.1-.2-.7-1.7-1-2.4-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9 0 1.7 1.2 3.3 1.4 3.5.2.2 2.4 3.7 5.9 5.1.8.3 1.5.5 2 .7.8.2 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.4z"/>
+      </svg>
+      <span>Confirmar pelo WhatsApp</span>
+    </a>
+
+    <button type="button" class="form-toggle" id="form-toggle"
+            aria-controls="rsvp-form" aria-expanded="false">
+      Ou preencher aqui
+    </button>
+
+    <form class="rsvp-form" id="rsvp-form" novalidate>
+      <div class="field">
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" autocomplete="name"
+               placeholder="Como prefere ser recebido" required />
+      </div>
+      <div class="field">
+        <label for="telefone">Telefone</label>
+        <input id="telefone" name="telefone" type="tel" inputmode="tel"
+               autocomplete="tel" placeholder="(00) 00000-0000" required />
+      </div>
+      <div class="field">
+        <label for="acompanhantes">Acompanhantes</label>
+        <input id="acompanhantes" name="acompanhantes" type="number"
+               inputmode="numeric" min="0" max="10" placeholder="0" />
+      </div>
+      <button type="submit" class="btn-submit">Enviar confirmação</button>
+    </form>
+
+    <div class="rsvp-thanks" id="rsvp-thanks" role="status" aria-live="polite">
+      Sua presença foi registrada.<br>Será uma honra recebê-lo.
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer">
+    <div class="orn sm reveal"><span class="d"></span></div>
+    <p class="footer-brand reveal d1">CAVE ÚNICA</p>
+    <p class="footer-tag reveal d2">
+      Rótulos no tempo certo.<br>
+      Charutos e destilados exclusivos.<br>
+      Alphaville Flamboyant · Goiânia
+    </p>
+    <nav class="footer-links reveal d3" aria-label="Links">
+      <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://wa.me/5562982608102" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://maps.google.com/?q=Rua+Piracanjuba+62+Alphaville+Flamboyant+Goi%C3%A2nia+GO" target="_blank" rel="noopener">Como chegar</a>
+    </nav>
+  </footer>
+
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── Reveal on scroll ─────────────────────────────────── */
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  /* ── Floating CTA visibility ──────────────────────────── */
+  var floatCta  = document.getElementById('float-cta');
+  var hero      = document.querySelector('.hero');
+  var heroH     = hero ? hero.offsetHeight : window.innerHeight;
+  var shown     = false;
+
+  function onScroll() {
+    var past = window.scrollY > heroH * 0.6;
+    if (past !== shown) {
+      shown = past;
+      floatCta && floatCta.classList.toggle('visible', shown);
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ── RSVP form toggle ─────────────────────────────────── */
+  var toggleBtn = document.getElementById('form-toggle');
+  var rsvpForm  = document.getElementById('rsvp-form');
+  if (toggleBtn && rsvpForm) {
+    toggleBtn.addEventListener('click', function () {
+      var open = rsvpForm.classList.toggle('open');
+      toggleBtn.setAttribute('aria-expanded', String(open));
+      toggleBtn.textContent = open ? 'Fechar' : 'Ou preencher aqui';
+      if (open) {
+        setTimeout(function () {
+          var first = rsvpForm.querySelector('input');
+          if (first) first.focus({ preventScroll: false });
+        }, 380);
+      }
+    });
+  }
+
+  /* ── RSVP form submit → WhatsApp ──────────────────────── */
+  if (rsvpForm) {
+    rsvpForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var data   = new FormData(rsvpForm);
+      var nome   = (data.get('nome')  || '').toString().trim();
+      var tel    = (data.get('telefone') || '').toString().trim();
+      var acomp  = (data.get('acompanhantes') || '').toString().trim();
+
+      var msg = 'Olá, quero confirmar minha presença na inauguração da CAVE ÚNICA.';
+      if (nome)  msg += ' Nome: '           + nome  + '.';
+      if (tel)   msg += ' Telefone: '       + tel   + '.';
+      if (acomp) msg += ' Acompanhantes: '  + acomp + '.';
+
+      window.open(
+        'https://wa.me/5562982608102?text=' + encodeURIComponent(msg),
+        '_blank', 'noopener'
+      );
+
+      rsvpForm.classList.remove('open');
+      if (toggleBtn) {
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.textContent = 'Ou preencher aqui';
+      }
+      var thanks = document.getElementById('rsvp-thanks');
+      if (thanks) thanks.classList.add('show');
+    });
+  }
+
+  /* ── Smooth scroll for anchor CTA ────────────────────── */
+  var ctaAnchor = document.querySelector('a.cta[href="#rsvp"]');
+  if (ctaAnchor) {
+    ctaAnchor.addEventListener('click', function (e) {
+      var target = document.getElementById('rsvp');
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+
+})();
+</script>
+
+</body>
+</html>
