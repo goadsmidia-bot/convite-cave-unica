@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#0E0A07" />
 <title>CAVE ÚNICA — Inauguração Exclusiva</title>
-<meta name="description" content="Inauguração exclusiva da CAVE ÚNICA. Uma experiência para ser vivida no tempo certo. 05 de Junho · 18h30 · Alphaville Flamboyant · Goiânia." />
+<meta name="description" content="Inauguração exclusiva da CAVE ÚNICA. Uma experiência para ser vivida no tempo certo. 09 de Junho · 18h30 · Alphaville Flamboyant · Goiânia." />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="CAVE ÚNICA — Inauguração Exclusiva" />
-<meta property="og:description" content="05 de Junho · 18h30 · Alphaville Flamboyant · Goiânia." />
+<meta property="og:description" content="09 de Junho · 18h30 · Alphaville Flamboyant · Goiânia." />
 <meta property="og:image" content="./assets/cave-unica-logo.png" />
 
 <!-- Fonts -->
@@ -23,6 +23,7 @@
    CAVE ÚNICA — Convite Online · Mobile-First Premium
    ================================================================ */
 :root {
+  color-scheme: dark;
   --bg-deepest:   #0E0A07;
   --bg-base:      #14100C;
   --bg-card:      #1A130E;
@@ -262,6 +263,10 @@ section {
   background: rgba(198,153,115,.08);
   color: var(--ink-primary);
   border-color: var(--copper-light);
+}
+.cta:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 3px;
 }
 .cta:active::before { inset: 6px }
 
@@ -523,6 +528,10 @@ h2.section-title {
   border-color: var(--copper-light);
   box-shadow: 0 12px 40px -8px rgba(198,153,115,.25);
 }
+.btn-whatsapp:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 3px;
+}
 
 /* Form toggle */
 .form-toggle {
@@ -552,6 +561,11 @@ h2.section-title {
 .form-toggle:hover,
 .form-toggle:active { color: var(--copper-light) }
 .form-toggle:hover::after { width: 36px }
+.form-toggle:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
 
 /* Collapsible form */
 .rsvp-form {
@@ -593,6 +607,9 @@ h2.section-title {
   -webkit-appearance: none;
   border-radius: 0;
 }
+.field input:focus-visible {
+  outline: none; /* border-bottom already provides the indicator */
+}
 .field input:focus { border-color: var(--copper-light) }
 .field input::placeholder { color: var(--ink-muted); font-style: italic }
 
@@ -618,6 +635,10 @@ h2.section-title {
 .btn-submit:active {
   background: rgba(198,153,115,.08);
   color: var(--ink-primary);
+}
+.btn-submit:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 3px;
 }
 
 .rsvp-thanks {
@@ -724,6 +745,10 @@ h2.section-title {
 .float-cta:active {
   background: linear-gradient(160deg, var(--copper-dark) 0%, #4A2C18 100%);
 }
+.float-cta:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 3px;
+}
 .float-cta svg { width: 17px; height: 17px; flex-shrink: 0 }
 
 /* ── Reveal animations ────────────────────────────────────────── */
@@ -789,7 +814,7 @@ h2.section-title {
   <span>Confirmar presença</span>
 </a>
 
-<main class="invite" id="invite">
+<main class="invite" id="invite" translate="no">
   <!-- decorative frame elements -->
   <div class="frame-border" aria-hidden="true"></div>
   <div class="frame-corners" aria-hidden="true">
@@ -807,7 +832,7 @@ h2.section-title {
 
     <div class="orn sm reveal d1"><span class="d"></span></div>
 
-    <p class="eyebrow reveal d2">05 · 06 · 2026</p>
+    <p class="eyebrow reveal d2">09 · 06 · 2026</p>
 
     <h1 class="hero-title reveal d3">
       Inauguração<br>Exclusiva
@@ -818,7 +843,7 @@ h2.section-title {
     </p>
 
     <div class="meta reveal d5">
-      05 de Junho <span class="dot">·</span> 18h30
+      09 de Junho <span class="dot">·</span> 18h30
       <span class="place">Alphaville Flamboyant · Goiânia</span>
     </div>
 
@@ -940,7 +965,7 @@ h2.section-title {
     <ul class="info-list">
       <li class="reveal d2">
         <label>Data</label>
-        <span>05 de Junho</span>
+        <span>09 de Junho</span>
       </li>
       <li class="reveal d3">
         <label>Horário</label>
